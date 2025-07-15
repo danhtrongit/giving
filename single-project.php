@@ -86,23 +86,9 @@ get_header();
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="article-inner">
                         <!-- Project Header -->
-                        <header class="entry-header">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <div class="entry-image-float">
-                                    <?php echo get_the_post_thumbnail(null, 'large', array('class' => 'project-featured-image')); ?>
-                                </div>
-                            <?php endif; ?>
-                            
-                            <h1 class="entry-title"><?php the_title(); ?></h1>
-                            
-                            <div class="entry-divider"></div>
-                        </header>
-                        
                         <!-- Project Content -->
                         <div class="entry-content single-page">
                             <?php 
-                            // Project Overview will be automatically added by the 
-                            // giving_add_project_overview_to_content() function
                             the_content(); 
                             ?>
                             
