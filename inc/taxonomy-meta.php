@@ -10,28 +10,33 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Add featured image field to service category
+ * Add featured image field to taxonomies
  */
 class Giving_Taxonomy_Meta {
+    
+    // Taxonomies that will have featured image support
+    private $taxonomies = array('service_category', 'project_style', 'project_category', 'project_area');
     
     /**
      * Initialize the class
      */
     public function __construct() {
-        // Add form fields to service_category taxonomy
-        add_action('service_category_add_form_fields', array($this, 'add_category_image_field'));
-        add_action('service_category_edit_form_fields', array($this, 'edit_category_image_field'), 10, 2);
-        
-        // Save the form fields
-        add_action('created_service_category', array($this, 'save_category_image_field'));
-        add_action('edited_service_category', array($this, 'save_category_image_field'));
+        foreach ($this->taxonomies as $taxonomy) {
+            // Add form fields to taxonomy
+            add_action($taxonomy . '_add_form_fields', array($this, 'add_category_image_field'));
+            add_action($taxonomy . '_edit_form_fields', array($this, 'edit_category_image_field'), 10, 2);
+            
+            // Save the form fields
+            add_action('created_' . $taxonomy, array($this, 'save_category_image_field'));
+            add_action('edited_' . $taxonomy, array($this, 'save_category_image_field'));
+            
+            // Add column to admin list table
+            add_filter('manage_edit-' . $taxonomy . '_columns', array($this, 'add_image_column'));
+            add_filter('manage_' . $taxonomy . '_custom_column', array($this, 'add_image_column_content'), 10, 3);
+        }
         
         // Enqueue scripts
         add_action('admin_enqueue_scripts', array($this, 'load_media_scripts'));
-        
-        // Add column to admin list table
-        add_filter('manage_edit-service_category_columns', array($this, 'add_image_column'));
-        add_filter('manage_service_category_custom_column', array($this, 'add_image_column_content'), 10, 3);
     }
     
     /**
@@ -95,7 +100,7 @@ class Giving_Taxonomy_Meta {
     public function load_media_scripts() {
         $screen = get_current_screen();
         
-        if (isset($screen->taxonomy) && $screen->taxonomy === 'service_category') {
+        if (isset($screen->taxonomy) && in_array($screen->taxonomy, $this->taxonomies)) {
             wp_enqueue_media();
             
             // Add custom script
