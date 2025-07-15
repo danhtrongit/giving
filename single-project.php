@@ -9,6 +9,74 @@ get_header();
 ?>
 
 <div id="content" class="project-wrapper single-project page-wrapper">
+
+
+<!-- Banner Section Start -->
+<div class="banner has-hover" id="banner-1329491744">
+  <div class="banner-inner fill">
+    <div class="banner-bg fill">
+      <?php if (has_post_thumbnail()) : ?>
+                <?php echo get_the_post_thumbnail(null, 'large', array('class' => 'project-featured-image bg attachment-large size-large')); ?>
+            <?php endif; ?>
+      <div class="overlay"></div>
+    </div>
+    <div class="banner-layers container">
+      <div class="fill banner-link"></div>
+      <div id="text-box-2007279858" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+        <div class="text-box-content text dark">
+          <div class="text-inner text-center">
+            <div class="row" id="row-614772994">
+              <div id="col-12277568" class="col small-12 large-12">
+                <div class="col-inner">
+                  <div id="gv-breadcrumb-6875c6bdf36c7" class="gv-breadcrumb">
+                    <a href="https://fernandonguyen.site/">Trang chủ</a>
+                    <span class="separator">/</span> <?php the_title(); ?>
+                  </div>
+                  <h2 id="gv-title-6875c6bdf3845" class="gv-title"><?php the_title(); ?></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Text box custom styles -->
+        <style>
+          #text-box-2007279858 { width: 60%; }
+          #text-box-2007279858 .text-box-content { font-size: 100%; }
+        </style>
+      </div>
+    </div>
+    <!-- Banner custom styles -->
+    <style>
+      #banner-1329491744 { padding-top: 500px; }
+      #banner-1329491744 .overlay { background-color: rgba(0, 0, 0, 0.25); }
+      #gv-breadcrumb-6875c6bdf36c7 {
+        margin-top: 0px; margin-bottom: 15px;
+        font-size: 1rem; font-weight: 500; text-align: center;
+      }
+      @media (max-width: 849px) {
+        #gv-breadcrumb-6875c6bdf36c7 { font-size: 0.9rem; }
+      }
+      @media (max-width: 549px) {
+        #gv-breadcrumb-6875c6bdf36c7 { font-size: 0.8rem; }
+      }
+      #gv-title-6875c6bdf3845 {
+        margin-top: 0px; margin-bottom: 15px;
+        padding-top: 0px; padding-bottom: 0px;
+        text-transform: none; font-weight: 600; font-size: 2.5rem;
+      }
+      @media (max-width: 849px) {
+        #gv-title-6875c6bdf3845 { font-size: 2rem; }
+      }
+      @media (max-width: 549px) {
+        #gv-title-6875c6bdf3845 { font-size: 1.5rem; }
+      }
+    </style>
+  </div>
+</div>
+<!-- Banner Section End -->
+
+
+
     <div class="row row-large">
         <div class="large-12 col">
             <?php while (have_posts()) : the_post(); ?>

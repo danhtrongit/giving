@@ -1,0 +1,56 @@
+<!-- Banner chính, đã đơn giản hóa -->
+<div class="banner" id="banner-312177130" aria-hidden="true">
+    <div class="banner-inner">
+        <!-- Ảnh nền banner -->
+        <div class="banner-bg">
+            <img src="https://fernandonguyen.site/wp-content/uploads/2025/07/banner1.png" alt="Banner" width="2036"
+                height="796" loading="lazy">
+        </div>
+        <!-- Lớp chứa nội dung và link của banner -->
+        <div class="banner-layers container">
+            <div class="banner-link"></div>
+            <!-- Box chứa text (hiện đang để trống) -->
+            <div id="text-box-659873061" class="text-box">
+                <div class="text-box-content">
+                    <div class="text-inner text-center">
+                        <!-- Nội dung text ở đây (nếu có) -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CSS gom chung lại, giải thích từng phần -->
+<style>
+    /* Banner căn tuyệt đối, full chiều ngang */
+    #banner-312177130 {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding-top: 41%;
+        /* Tỉ lệ khung hình của banner */
+    }
+
+    /* Ảnh nền fill full khung */
+    .banner-bg img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Box text rộng 55% banner */
+    #text-box-659873061 {
+        width: 55%;
+    }
+
+    /* Kích cỡ chữ mặc định trong box */
+    #text-box-659873061 .text-box-content {
+        font-size: 100%;
+    }
+
+    /* Canh giữa nội dung text */
+    .text-inner.text-center {
+        text-align: center;
+    }
+</style>
