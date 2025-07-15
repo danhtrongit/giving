@@ -93,32 +93,7 @@ get_header();
           <div class="entry-content single-page">
             <?php the_content(); ?>
 
-            <!-- Project Taxonomies -->
-            <div class="project-taxonomy">
-              <?php 
-              $taxonomies = ['project_style', 'project_category', 'project_area'];
-              foreach ($taxonomies as $taxonomy) {
-                $terms = get_the_terms(get_the_ID(), $taxonomy);
-                if ($terms && !is_wp_error($terms)) {
-                  $tax_obj = get_taxonomy($taxonomy);
-                  echo '<div class="project-taxonomy-group">';
-                  echo '<span class="taxonomy-label">' . esc_html($tax_obj->labels->name) . ':</span> ';
-                  $term_links = array_map(function ($term) {
-                    return '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a>';
-                  }, $terms);
-                  echo implode(', ', $term_links);
-                  echo '</div>';
-                }
-              }
-              ?>
-            </div>
-
-            <?php if (get_theme_mod('blog_share', 1)) : ?>
-              <div class="project-share text-center">
-                <div class="is-divider medium"></div>
-                <?php echo do_shortcode('[share]'); ?>
-              </div>
-            <?php endif; ?>
+            <?php echo giving_display_project_overview(get_the_ID()); ?>
           </div>
 
           <!-- Navigation -->
