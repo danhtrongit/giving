@@ -1,21 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all member buttons and cards
-    const memberButtons = document.querySelectorAll('.member-button-1, .member-button-2, .member-button-3');
-    const memberCards = document.querySelectorAll('.member-card-1, .member-card-2, .member-card-3');
+    // Get all member buttons and cards using common class prefixes
+    const memberButtons = document.querySelectorAll('[class*="member-button-"]');
+    const memberCards = document.querySelectorAll('[class*="member-card-"]');
 
     // Add click event to each button
-    memberButtons.forEach((button, index) => {
+    memberButtons.forEach((button) => {
         button.addEventListener('click', function() {
+            // Get the button number from its class
+            const buttonClass = Array.from(button.classList).find(cls => cls.match(/member-button-\d+/));
+            const buttonNumber = buttonClass ? buttonClass.split('-').pop() : null;
+            
+            if (!buttonNumber) return;
+            
             // Remove active class from all cards and buttons
             memberCards.forEach(card => card.classList.remove('active'));
             memberButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Add active class to the clicked button and corresponding card
+            // Add active class to the clicked button
             button.classList.add('active');
             
-            // The index+1 corresponds to the card number (member-card-1, member-card-2, etc.)
-            const cardNumber = index + 1;
-            const targetCard = document.querySelector(`.member-card-${cardNumber}`);
+            // Find and activate the corresponding card
+            const targetCard = document.querySelector(`.member-card-${buttonNumber}`);
             if (targetCard) {
                 targetCard.classList.add('active');
             }

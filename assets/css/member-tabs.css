@@ -1,20 +1,20 @@
 /* Member Tabs Styling */
 
 /* Hide all member cards by default */
-.member-card-1, .member-card-2, .member-card-3 {
-    display: none;
+[class*="member-card-"] {
+    display: none !important;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
 /* Show only the active card */
-.member-card-1.active, .member-card-2.active, .member-card-3.active {
-    display: flex;
+[class*="member-card-"].active {
+    display: flex !important;
     opacity: 1;
 }
 
 /* Member buttons styling */
-.member-button-1, .member-button-2, .member-button-3 {
+[class*="member-button-"] {
     cursor: pointer;
     transition: all 0.3s ease;
     opacity: 0.6;
@@ -22,10 +22,16 @@
 }
 
 /* Active member button */
-.member-button-1.active, .member-button-2.active, .member-button-3.active {
+[class*="member-button-"].active {
     opacity: 1;
     filter: grayscale(0%);
     transform: scale(1.05);
+}
+
+/* Hover effect for better UX */
+[class*="member-button-"]:hover {
+    opacity: 0.8;
+    filter: grayscale(30%);
 }
 
 /* Change cursor to pointer for better UX */
@@ -35,7 +41,7 @@
 
 /* Ensure the content stays visible on mobile */
 @media (max-width: 549px) {
-    .member-card-1.active, .member-card-2.active, .member-card-3.active {
+    [class*="member-card-"].active {
         display: block;
     }
 } 
