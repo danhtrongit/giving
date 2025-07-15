@@ -10,7 +10,7 @@ get_header();
 
 <div id="content" class="project-wrapper single-project page-wrapper">
     <div class="row row-large">
-        <div class="large-9 col">
+        <div class="large-12 col">
             <?php while (have_posts()) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="article-inner">
@@ -152,13 +152,6 @@ get_header();
                 ?>
                 
             <?php endwhile; ?>
-        </div>
-        
-        <!-- Sidebar -->
-        <div class="post-sidebar large-3 col">
-            <?php flatsome_sticky_column_open('blog_sticky_sidebar'); ?>
-            <?php get_sidebar(); ?>
-            <?php flatsome_sticky_column_close('blog_sticky_sidebar'); ?>
         </div>
     </div>
 </div>
