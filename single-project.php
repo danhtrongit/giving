@@ -21,7 +21,7 @@ get_header();
     </div>
     <div class="banner-layers container">
       <div class="fill banner-link"></div>
-      <div class="text-box banner-layer center-box res-text">
+      <div class="text-box banner-layer center-box res-text x50 md-x50 lg-x50 y50 md-y50 lg-y50">
         <div class="text-box-content text dark">
           <div class="text-inner text-center">
             <div class="row">
