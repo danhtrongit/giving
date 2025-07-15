@@ -263,7 +263,6 @@ function giving_project_overview_styles() {
             font-size: 1.4em;
             font-weight: bold;
             margin-bottom: 20px;
-            text-align: center;
             color: #333;
         }
         .project-overview-item {
