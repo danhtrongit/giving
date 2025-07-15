@@ -30,7 +30,10 @@ get_header();
                 <div class="col-inner">
                   <div id="gv-breadcrumb-6875c6bdf36c7" class="gv-breadcrumb">
                     <a href="https://fernandonguyen.site/">Trang chủ</a>
-                    <span class="separator">/</span> <?php the_title(); ?>
+                    <span class="separator">/</span>
+                    <a href="<?php echo home_url(); ?>/du-an">Dự án</a>
+                    <span class="separator">/</span>
+                    <?php the_title(); ?>
                   </div>
                   <h2 id="gv-title-6875c6bdf3845" class="gv-title"><?php the_title(); ?></h2>
                 </div>
