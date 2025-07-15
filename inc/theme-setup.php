@@ -18,5 +18,11 @@ function giving_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
     wp_enqueue_style('fonts', get_stylesheet_directory_uri() . '/assets/fonts/stylesheet.css');
+    
+    // Enqueue member tabs CSS
+    wp_enqueue_style('member-tabs', get_stylesheet_directory_uri() . '/assets/css/member-tabs.css', array(), '1.0.0');
+    
+    // Enqueue member tabs JavaScript
+    wp_enqueue_script('member-tabs', get_stylesheet_directory_uri() . '/assets/js/member-tabs.js', array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'giving_enqueue_styles'); 

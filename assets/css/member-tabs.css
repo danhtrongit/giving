@@ -1,0 +1,41 @@
+/* Member Tabs Styling */
+
+/* Hide all member cards by default */
+.member-card-1, .member-card-2, .member-card-3 {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Show only the active card */
+.member-card-1.active, .member-card-2.active, .member-card-3.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Member buttons styling */
+.member-button-1, .member-button-2, .member-button-3 {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    filter: grayscale(70%);
+}
+
+/* Active member button */
+.member-button-1.active, .member-button-2.active, .member-button-3.active {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Change cursor to pointer for better UX */
+#stack-1065508115 .box {
+    cursor: pointer;
+}
+
+/* Ensure the content stays visible on mobile */
+@media (max-width: 549px) {
+    .member-card-1.active, .member-card-2.active, .member-card-3.active {
+        display: block;
+    }
+} 
