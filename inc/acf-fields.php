@@ -253,11 +253,7 @@ function giving_project_overview_styles() {
     ?>
     <style>
         .project-overview-box {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 25px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .project-overview-title {
             font-size: 1.4em;
