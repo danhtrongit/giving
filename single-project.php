@@ -92,8 +92,6 @@ get_header();
         <div class="article-inner">
           <div class="entry-content single-page">
             <?php the_content(); ?>
-
-            <?php echo giving_display_project_overview(get_the_ID()); ?>
           </div>
 
           <!-- Navigation -->
